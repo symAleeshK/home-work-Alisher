@@ -1,6 +1,8 @@
-var Tc = prompt('Задать температуру в градусах по Цельсию');
-var Tf = (9 / 5) * Tc + 32;
-alert('Температура по Фаренгейту: ' + Tf);
+var a = 1, b = 1, c, d;
+c = ++a, alert(c);
+d = b++; alert(d);
+c = (2+ ++a); alert(c);
+d = (2+ b++); alert(d);
 
-var name = (' Василий ');
-var admin = (name);
+alert(a);
+alert(b);
