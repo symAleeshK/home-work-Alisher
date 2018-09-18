@@ -1,15 +1,73 @@
+"use strict";
+
 // Задание 1
-var a = 1, b = 1, c, d; 
-c = ++a, alert(c); // увеличит переменную (a), затем вернет ее значение в (c).
-d = b++; alert(d); // постфиксная форма вернет старое значение бывшее до увеличения.
-c = (2+ ++a); alert(c); // с = (2 + (a = a + 1))
-d = (2+ b++); alert(d); // как уже выяснили b = b + 1, d = (2 + (b)).
 
-alert(a); 
-alert(b); // логический итог всех опреаций (a)=3, (b)=3.
-// Задание 2
-var a = 2;
-var x = 1 + (a *= 2); // по правилу приоритета сначала производится операция в скобках, потом сложение. В итоге x=5.
-// Задание 3
-/* здесь я если честно не понял задание. */
+/*var number = {
+  units: null,
+  dozens: null,
+  hundreds: null,
 
+  parse: function (n) {
+    var data = ("" + n).split("").reverse().join("");
+    if (data.length < 1 || data.length > 3) {
+      var err = "Число должно быть в диапозоне от 0 до 999";
+      log(err);
+      console.log(err);
+      return this;
+    } else {
+      switch (data.length) {
+        case 3:
+         this.hundreds = data[2];
+        case 2:
+         this.dozens = [1];
+        case 1:
+         this.units = [0];
+      }
+      return this;
+    }
+  },
+  toString: function () {
+    return "units: " + this.units + ", dozens: " + this.dozens + "hundreds: " + this.hundreds;
+  }
+};*/
+
+// Задание 2 
+var products = [{
+   id: 1,
+   title: 'item 1',
+   price: 10,
+ }, {
+   id: 2,
+   title: 'item 2',
+   price: 20,
+ }, {
+   id: 3,
+   title: 'item 3',
+   price: 30,
+ },
+];
+
+var cart = {
+  products: [],
+  sum: 0,
+  addProduct: function(product) {
+    
+     this.products.push(item);
+     this.countTotalPrice();
+  },
+  countTotalPrice() {
+    var sum = 0;
+
+    for (var i = 0; i < this.products.length; i++) {
+      sum += this.products[i].price;
+    }
+
+    this.sum = sum;
+
+  }
+};
+
+cart.addProduct(products[0]);
+cart.addProduct(products[0]);
+cart.addProduct(products[0]);
+cart.addProduct(products[1]);
