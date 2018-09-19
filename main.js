@@ -32,7 +32,7 @@
 };*/
 
 // Задание 2 
-var products = [{
+/*var products = [{
    id: 1,
    title: 'item 1',
    price: 10,
@@ -50,16 +50,37 @@ var products = [{
 var cart = {
   products: [],
   sum: 0,
-  addProduct: function(product) {
-    
+  addProduct: function(productId) {
+    for (var i = 0; i < this.products.length; i++) {
+      if ( this.products[i].id == productId ) {
+        return this.products[i];
+      }
+
+      return false;
+    }
      this.products.push(item);
      this.countTotalPrice();
+  },
+  addProduct: function(product) {
+    var item = this.getProductById(product.id);
+
+    if ( !item ) {
+      item = {};
+      item.id = product.price;
+      item.quantity = 1;
+      item.price = product.price;
+      this.products.push(item);
+    } else {
+      ++item.quantity;
+    }
+    
+    this.countTotalPrice();
   },
   countTotalPrice() {
     var sum = 0;
 
     for (var i = 0; i < this.products.length; i++) {
-      sum += this.products[i].price;
+      sum += this.products[i].price * this.products[i].quantity;
     }
 
     this.sum = sum;
@@ -71,3 +92,42 @@ cart.addProduct(products[0]);
 cart.addProduct(products[0]);
 cart.addProduct(products[0]);
 cart.addProduct(products[1]);
+cart.addProduct(products[2]); */
+
+// Домашне задание к 5 уроку!!!
+
+// Задание 1
+
+function drawChess(){
+    let mainBlock = document.querySelector('.main-block');
+    let block;
+    let flag = true;
+
+    let figure = { //создаем массив с расположением фигурам
+        0 : ['-263px -19px', '-484px -22px', '-372px -17px', '-150px -16px', '-38px -16px','-372px -17px', '-484px -22px','-263px -19px'],
+        1 : ['-595px -19px', '-595px -19px', '-595px -19px', '-595px -19px', '-595px -19px','-595px -19px', '-595px -19px','-595px -19px'],
+        6 : ['-595px -116px', '-595px -116px', '-595px -116px', '-595px -116px', '-595px -116px','-595px -116px', '-595px -116px','-595px -116px'],
+        7 : ['-263px -116px', '-484px -116px', '-372px -116px', '-38px -116px', '-150px -116px','-372px -116px', '-484px -116px','-263px -116px'],
+    };
+
+    for (let i = 0; i<8; i++){
+        for (let j = 0; j<8; j++){
+            if (j==0) flag = !flag;
+
+            block = document.createElement('div');
+
+            if (flag) block.className = 'block black';
+            else block.className = 'block white';
+
+            if (figure[i]!==undefined && figure[i][j]!==undefined){
+                block.style.backgroundImage = 'url(сhess_symbols_set_.png)';
+                block.style.backgroundPosition = figure[i][j];
+            }
+
+            mainBlock.appendChild(block);
+            flag = !flag;
+        }
+    }
+}
+
+drawChess();
