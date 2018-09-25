@@ -1,112 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <title>Lesson_4</title>
-    <link rel="stylesheet" href="style.css">
-
+	<meta charset='UTF-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<meta http-equiv='X-UA-Compatible' content='ie=edge'>
+	<link rel='stylesheet' href='style.css'>
+	<title>Homework_6</title>
 </head>
-
 <body>
-    <h1>Домашняя работа</h1>
-
-    <div class="notation">
-		<div class="tableA">
-	<div class="tableA-row"> 		        
-        <div class="tableA-cell">A</div>
-        <div class="tableA-cell">B</div>
-        <div class="tableA-cell">C</div>
-        <div class="tableA-cell">D</div>
-        <div class="tableA-cell">E</div>
-        <div class="tableA-cell">F</div>
-        <div class="tableA-cell">G</div>
-        <div class="tableA-cell">H</div>        	       
+	<div class="slider">
+		<div class="show-full-img">
+			<img src='' alt=''>
 		</div>
-	</div>  	
-	<div class="tableB">
-	<div class="tableB-row"> 		        
-        <div class="tableB-cell">A</div>
-        <div class="tableB-cell">B</div>
-        <div class="tableB-cell">C</div>
-        <div class="tableB-cell">D</div>
-        <div class="tableB-cell">E</div>
-        <div class="tableB-cell">F</div>
-        <div class="tableB-cell">G</div>
-        <div class="tableB-cell">H</div>        	       
+		<div class='slider-nav'>
+			<span class='prev' data-direction='prev'></span>
+			<span class='next' data-direction='next'></span>
 		</div>
-	</div> 
-	<div class="tableL">		
-		<div class="tableL-row">
-			<div class="tableL-cell"></div>
-		</div>
-		<div class="tableL-row">	
-			<div class="tableL-cell">8</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">7</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">6</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">5</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">4</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">3</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">2</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell">1</div>
-		</div>
-		<div class="tableL-row">
-			<div class="tableL-cell"></div>
+		<div class='slider__thumbs'>
+			<img class="slider__img" data-title="Travel_to_Spain" data-price="123" src="img/small/img1.jpg" alt="">
+			<img class="slider__img" src="img/small/img2.jpg" alt="">
+			<img class="slider__img" src="img/small/img3.jpg" alt="">
+			<img class="slider__img" src="img/small/img4.jpg" alt="">
+			<img class="slider__img" src="img/small/img5.jpg" alt="">
 		</div>
 	</div>
-
-	<div class="tableR">		
-		<div class="tableR-row">
-			<div class="tableR-cell"></div>
+	<div class='catalog'>
+		<h2>Каталог</h2>
+		<div class='product-item'>
+			<img src="img/small/img1.jpg" alt="">
+			<p>Далеко-далеко за словесными горами в стране.</p>
+			<span class='price'>123</span>
+			<img class='btn-buy' data-title="Тур в Мадрид" data-price="819" src='./img/Ecommerce-Buy-icon.png' alt=''>
 		</div>
-		<div class="tableR-row">	
-			<div class="tableR-cell">8</div>
+		<div class='product-item'>
+			<img src="img/small/img2.jpg" alt="">
+			<p>Далеко-далеко за словесными горами в стране.</p>
+			<span class='price'>123</span>
+			<img class='btn-buy' data-title="Тур в Рим" data-price="799" src='./img/Ecommerce-Buy-icon.png' alt=''>
 		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">7</div>
+		<div class='product-item'>
+			<img src="img/small/img3.jpg" alt="">
+			<p>Далеко-далеко за словесными горами в стране.</p>
+			<span class='price'>123</span>
+			<img class='btn-buy' data-title="Тур в Барселону" data-price="949" src='./img/Ecommerce-Buy-icon.png' alt=''>
 		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">6</div>
+		<div class='product-item'>
+			<img src="img/small/img4.jpg" alt="">
+			<p>Далеко-далеко за словесными горами в стране.</p>
+			<span class='price'>123</span>
+			<img class='btn-buy' data-title="Тур в Венецию" data-price="899" src='./img/Ecommerce-Buy-icon.png' alt=''>
 		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">5</div>
-		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">4</div>
-		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">3</div>
-		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">2</div>
-		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell">1</div>
-		</div>
-		<div class="tableR-row">
-			<div class="tableR-cell"></div>
+		<div class='product-item'>
+			<img src="img/small/img5.jpg" alt="">
+			<p>Далеко-далеко за словесными горами в стране.</p>
+			<span class='price'>123</span>
+			<img class='btn-buy' data-title="Тур в Лондон" data-price="1000" src='./img/Ecommerce-Buy-icon.png' alt=''>
 		</div>
 	</div>
-
-			<div class="main-block">
-			     </div>
-			   </div>
-
-    <script type="text/javascript" src="main.js"></script>
+	<div class='cart'>
+		<h2>Корзина</h2>
+		<ol class='cartItems'></ol>
+		<div class='total'></div>
+	</div>
+	<script src='scripts.js'></script>
 </body>
-
 </html>
