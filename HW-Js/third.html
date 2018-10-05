@@ -21,6 +21,7 @@
             let coffeeBeans = 0
             let waterHeatCapacity = 4200
             let maxTemp = 90
+            let timerId
 
             const getBoilTime = function() {
                 return (waterAmount * waterHeatCapacity * maxTemp) / power
@@ -30,7 +31,7 @@
                 return waterAmount > 0
             }
             const checkCoffee = function() {
-                return coffeBeans > 0
+                return coffeeBeans > 0
             }
 
             this.fill = function(newAmount) {
@@ -63,6 +64,14 @@
                     console.log('Ваш кофе готов!')
                 }, boilTime)
             }
+            
+            this.run = function() {
+                timerId = setTimeout(getBoilTime)
+            }
+            
+            this.stop = function() {
+                clearTimeout(timerId)
+            }
         }
 
         const vitek = new CoffeeMachine(2500)
@@ -70,6 +79,7 @@
         vitek.fill(50)
         vitek.addCoffee(6)
         vitek.launch()
+        vitek.stop()
 
     </script>
 </body>
