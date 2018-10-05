@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Добавить переменнную кофе(зерна)
+        // Ввести проверку на пустую кофеварку
+        // Реализовать зависимость от кол-ва кофе
+        // Реализовать метод стоп
+
+        function CoffeeMachine(power) {
+            let waterAmount = 0
+            let coffeeBeans = 0
+            let waterHeatCapacity = 4200
+            let maxTemp = 90
+
+            const getBoilTime = function() {
+                return (waterAmount * waterHeatCapacity * maxTemp) / power
+            }
+
+            const checkWater = function() {
+                return waterAmount > 0
+            }
+            const checkCoffee = function() {
+                return coffeBeans > 0
+            }
+
+            this.fill = function(newAmount) {
+                if (newAmount >= 50) {
+                    waterAmount = newAmount
+                } else {
+                    console.error('Слишком мало воды')
+                }
+            }
+            this.addCoffee = function(newcoffeBeans) {
+                if (newcoffeBeans = 6) {
+                    coffeeBeans = newcoffeBeans
+                } else {
+                    console.error('Добавьте кофе!')
+                }
+            }
+
+            this.launch = function() {
+                if (!checkWater()) {
+                    console.error('Налейте воды!')
+                    return
+                }
+                if (!checkCoffee()) {
+                    console.error('НЕ добавили кофе')
+                    return
+                }
+                const boilTime = getBoilTime()
+                console.info(`Время приготовления: ${boilTime}`)
+                setTimeout(function() {
+                    console.log('Ваш кофе готов!')
+                }, boilTime)
+            }
+        }
+
+        const vitek = new CoffeeMachine(2500)
+
+        vitek.fill(50)
+        vitek.addCoffee(6)
+        vitek.launch()
+
+    </script>
+</body>
+
+</html>
