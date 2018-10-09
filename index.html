@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Lesson_3</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-  
-  <script type="text/javascript" src="main.js"></script>
+  <div class="container">
+      <ul class="list-group">
+          <li class="list-group-item">Cras justo odio</li>
+          
+        </ul>
+    <form class = "user-form">
+      <div class="form-group">
+        <label for="inputName">Имя</label>
+        <input type="text" class="form-control" id="inputName" placeholder="Введите Ваше имя">
+      </div>
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail1" placeholder="Введите email">
+      </div>
+      <div class="form-group">
+        <label for="inputAge">Ваш возраст</label>
+        <input type="number" class="form-control" id="inputAge" placeholder="Введите Ваше возраст">
+      </div>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+  </div>
+
+
+    
+  <script>
+     const BASE_URL = 'http://89.108.65.123';
+     const inputs = [ ... document.querySelectorAll('.user-form input')];
+     const [ nameInput, emailInput, ageInput ] = [...inputs];
+     
+    const userForm = document.querySelector('.user-form');
+    userForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const [ name, email, age ] = inputs.map(input => input.value);
+      const userObj = {
+        name,
+        email,
+        age,
+      };
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', `${baseURL}/user`, true);// Выдаёт здесь ошибку, не могу её определить.
+      xhr.send(JSON.stringify(userObj));
+      xhr.onreadystatechange = function () {
+        alert(`Пользователь ${name} создан`);
+      };
+    });
+    
+    const getUsers = () => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', `${baseURL}/user`, true);
+      xhr.send();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          const users = JSON.parse(xhr.responseText);
+          console.log(users);
+
+        }
+    };
+  };
+  </script>
 </body>
-</html> 
+</html>
