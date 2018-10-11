@@ -1,15 +1,84 @@
-// Задание 1
-var a = 1, b = 1, c, d; 
-c = ++a, alert(c); // увеличит переменную (a), затем вернет ее значение в (c).
-d = b++; alert(d); // постфиксная форма вернет старое значение бывшее до увеличения.
-c = (2+ ++a); alert(c); // с = (2 + (a = a + 1))
-d = (2+ b++); alert(d); // как уже выяснили b = b + 1, d = (2 + (b)).
+"use strict"
 
-alert(a); 
-alert(b); // логический итог всех опреаций (a)=3, (b)=3.
-// Задание 2
-var a = 2;
-var x = 1 + (a *= 2); // по правилу приоритета сначала производится операция в скобках, потом сложение. В итоге x=5.
+// 1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+// Списал этот пример в интернете. Один из лучших на мой взгляд примеров.
+/*function simpleNumber (num) {
+  if( num < 2 ) return false;
+  let count = 2;
+  while(count < num) {
+    if(num % count === 0) {
+      return false;
+    }
+    count++;
+  }
+  return true;
+}
+
+function getSimple(max) {
+  let i = 0;
+  let list = [];
+
+  while (i < max) {
+    if(simpleNumber(i)) list.push(i);
+    i++;
+  }
+  console.log(list);
+}
+
+getSimple(100)*/
+
+// Задание 2.
+/*var cartProduct =  [
+  ['computer', 250, 1],
+  ['tv', 150, 2],
+  ['notebook', 1000, 1],
+];
+
+function countCartItem(cart) {
+  var sum = 0;
+
+  for (var i = 0; i < cartProduct.length; i++) {
+       sum += cartProduct [i][1] * cartProduct [i][2]
+  }
+
+  return sum;
+}
+
+console.log(countCartItem(cartProduct));
+*/
 // Задание 3
+<<<<<<< HEAD
 /* здесь я если честно не понял задание. */
+=======
+>>>>>>> 990f7f568a6c893b20a3657d448abf92d67e63f1
 
+for (var i = 0; i <= 9; console.log(i++));
+
+// Задание 4
+
+var str = ''
+
+for ( var i = 0; i < 20; i++ ) {
+  str += 'x';
+
+  for ( var j = 0; j < i; j++ ) {
+    str += 'x'
+  }
+  
+  str += '\r\n';
+}
+console.log(str);
+
+// Задание 5
+var i = 0;
+
+do {
+  if ( i === 0 ) {
+    console.log(i + ' - ноль');
+  } else if (i % 2 == 0) {
+    console.log(i + ' - четное число');
+  } else {
+    console.log(i + ' - нечетное число');
+  }
+  i++;
+} while (i <= 10);

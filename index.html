@@ -1,77 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-=======
-    <meta charset="UTF-8">
-    <title>Lesson_3</title>
-    <h1>Домашняя работа</h1>
->>>>>>> 990f7f568a6c893b20a3657d448abf92d67e63f1
 </head>
 <body>
   <div class="container">
-      <ul class="list-group">
-          <li class="list-group-item">Cras justo odio</li>
+      <p>
+          He felicity no an at 'packages' answered opinions juvenile. Estate was tended ten 'boy' nearer seemed. At principle perfectly by sweetness do. Painful so he an comfort is manners. We me rent been part what. If in so bred at dare rose lose good. Do play they miss give so up. Sentiments two occasional affronting solicitude trave
+      
+          Polite do object at passed it is aren't. Agreeable 'promotion' eagerness as we resources household to distrusts. As so seeing latter he should thirty whence. So by colonel hearted ferrars. Their saved linen downs tears son add music. Happiness remainder joy but earnestly for off. Advantages entreaties mr he apartments do. To things so denied admire. F
           
-        </ul>
-    <form class = "user-form">
-      <div class="form-group">
-        <label for="inputName">Имя</label>
-        <input type="text" class="form-control" id="inputName" placeholder="Введите Ваше имя">
-      </div>
-      <div class="form-group">
-        <label for="inputEmail">Email</label>
-        <input type="email" class="form-control" id="inputEmail1" placeholder="Введите email">
-      </div>
-      <div class="form-group">
-        <label for="inputAge">Ваш возраст</label>
-        <input type="number" class="form-control" id="inputAge" placeholder="Введите Ваше возраст">
-      </div>
-      <button type="submit" class="btn btn-primary">Отправить</button>
+          Any delicate you how kindness horrible outlived servants. Mirth learn it he given. If as increasing 'contrasted entreaties be'. He in sportsman household otherwise it perceived instantly. You high bed wish help call draw side. Secure shy favour length all twenty denote. Way own uncommonly travelling now a
+        </p>
+
+    <form action="">
+        <div class="form-group">
+            <label for="name">Имя</label>
+            <input type="text" class="form-control" data-validate="name" id="name" placeholder="Введите имя">
+          </div>
+          <div class="form-group">
+              <label for="phone">телефон</label>
+              <input type="text" class="form-control" data-validate="phone" id="phone" placeholder="Введите номер">
+            </div>
+            <div class="form-group">
+                <label for="email">Мыло</label>
+                <input type="text" class="form-control" data-validate="email" id="email" placeholder="Введите email">
+              </div>
+              <div class="form-group">
+                  <label for="text">сообщение</label>
+                  <textarea class="form-control" id="text" rows="3" data-validate="text"></textarea>
+                </div>
+          <button type="submit" class="btn btn-primary">Отправить</button>
     </form>
+
   </div>
-
-
-    
   <script>
-     const BASE_URL = 'http://89.108.65.123';
-     const inputs = [ ... document.querySelectorAll('.user-form input')];
-     const [ nameInput, emailInput, ageInput ] = [...inputs];
-     
-    const userForm = document.querySelector('.user-form');
-    userForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const [ name, email, age ] = inputs.map(input => input.value);
-      const userObj = {
-        name,
-        email,
-        age,
-      };
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', `${baseURL}/user`, true);// Выдаёт здесь ошибку, не могу её определить.
-      xhr.send(JSON.stringify(userObj));
-      xhr.onreadystatechange = function () {
-        alert(`Пользователь ${name} создан`);
-      };
-    });
-    
-    const getUsers = () => {
-      const xhr = new XMLHttpRequest();
-      xhr.open('POST', `${baseURL}/user`, true);
-      xhr.send();
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          const users = JSON.parse(xhr.responseText);
-          console.log(users);
 
+      const pTag = document.querySelector('p');
+      const tagValue = pTag.innerText;
+      const newValue = tagValue.replace(/'(?!\w\b)/gmi, '"');
+      pTag.innerHTML = newValue;
+      const validateInputs = (input) => {
+      
+      const validate = (value, RegExp) => {
+          return value.test(value);
+      };
+      const validateType = input.getAttribute('data-validate');
+      let isValid = false;
+        switch (validateType) {
+          case 'name':
+          isValid = validate(input.value, /[a-zа-яё]/gmi);
+          break;
+          case 'phone':
+          isValid = validate(input.value, /+7\(\d{3}\)\d{3}-\d{4}/gmi);
+          break;
+          case 'email':
+          isValid = validate(input.value, /[\w._-]+(?=[@mail\.ru])/gmi);
+          break;
+          case 'text':
+          isValid = validate(input.value, /./gmi);
+          break;
+          isValid = true;
         }
-    };
-  };
+        if (isValid) {
+          input.classList.add('is-valid');
+          input.classList.remove('is-invalid');
+        } else {
+          input.classList.remove('is-valid');
+          input.classList.add('is-invalid');
+        }
+      };
+      
+      window.onload = () => {
+        const inputs = [...document.querySelectorAll('.form-control')];
+      inputs.forEach( input => {
+        input.addEventListener('input', () => {
+          validateInput(input);
+        });
+      });
+      }
+
   </script>
 </body>
 </html>
