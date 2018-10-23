@@ -1,0 +1,22 @@
+{
+    "result": 1,
+    "comments": [
+        {
+            "id_comment": 100,
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad animi aperiam beatae cum, delectus ducimus eaque facilis laboriosam mollitia nesciunt quaerat repellat sequi! Ducimus ea id omnis rem temporibus?"
+    },
+        {
+            "id_comment": 101,
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad animi aperiam beatae cum, delectus ducimus eaque facilis laboriosam mollitia nesciunt quaerat repellat sequi! Ducimus ea id omnis rem temporibus?"
+    },
+        {
+            "id_comment": 102,
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad animi aperiam beatae cum, delectus ducimus eaque facilis laboriosam mollitia nesciunt quaerat repellat sequi! Ducimus ea id omnis rem temporibus?"
+    }
+        {
+            "id_comment": 103,
+            "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad animi aperiam beatae cum, delectus ducimus eaque facilis laboriosam mollitia nesciunt quaerat repellat sequi! Ducimus ea id omnis rem temporibus?"
+    }
+
+  ]
+}

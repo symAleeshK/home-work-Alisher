@@ -1,0 +1,13 @@
+{
+  "result": 1,
+  "basket": [
+    {
+      "id_product": 125,
+      "title": "Клавиатура для ПК",
+      "price": 1000
+    }
+  ],
+  "amount": 1000
+}
+
+
